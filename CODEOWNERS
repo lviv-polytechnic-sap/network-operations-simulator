@@ -1,0 +1,10 @@
+# Replace the placeholder usernames below with real GitHub usernames before classes begin.
+/services/device-registry/       @team1-user1 @team1-user2 @team1-user3 @team1-user4
+/services/signal-analyzer/       @team2-user1 @team2-user2 @team2-user3 @team2-user4
+/services/traffic-monitor/       @team3-user1 @team3-user2 @team3-user3 @team3-user4
+/services/event-queue/           @team4-user1 @team4-user2 @team4-user3 @team4-user4
+/services/incident-manager/      @team5-user1 @team5-user2 @team5-user3 @team5-user4
+/services/availability-monitor/  @team6-user1 @team6-user2 @team6-user3 @team6-user4
+/services/recovery-simulator/    @team7-user1 @team7-user2 @team7-user3 @team7-user4
+/services/operations-report/     @team8-user1 @team8-user2 @team8-user3 @team8-user4
+
