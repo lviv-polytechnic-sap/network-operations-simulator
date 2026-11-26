@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="context-drawio" name="Контекстна діаграма">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c1" value="Контекстна діаграма — Signal Analyzer (Команда 2)" style="text;html=1;fontSize=18;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Користувач&lt;br&gt;(оператор мережі)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="290" width="50" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Signal Analyzer&lt;br&gt;(сервіс 2, консольна програма C++17)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="menu choice,&lt;br&gt;measurement: deviceId, signalLevel,&lt;br&gt;latencyMs, packetLossPercent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="SignalClass для кожного вимірювання,&lt;br&gt;SignalAverages, worst measurement + reason,&lt;br&gt;validation error" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0;exitY=0.6;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="Сервіс 1&lt;br&gt;Device Registry" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="500" y="60" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="device list&lt;br&gt;(Future integration)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#999999;fontColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c6" target="c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="Сервіс 4&lt;br&gt;Event Queue" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="200" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="Сервіс 5&lt;br&gt;Incident Manager" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="310" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="Сервіс 8&lt;br&gt;Operations Report" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="420" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="signal events (Future integration)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#999999;fontColor=#666666;exitX=1;exitY=0.11;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="signal events (Future integration)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#999999;fontColor=#666666;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="signal events (Future integration)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#999999;fontColor=#666666;exitX=1;exitY=0.89;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="Суцільна лінія — реалізовано зараз.&lt;br&gt;Пунктир — Future integration, зараз не реалізується.&lt;br&gt;Формат майбутньої події: EVENT;id;SIGNAL;GOOD / DEGRADED / CRITICAL;device-&amp;lt;deviceId&amp;gt;" style="text;html=1;align=left;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="900" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
