@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="architecture-drawio" name="Компонентна діаграма">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c1" value="Компонентна діаграма — Signal Analyzer (Команда 2)" style="text;html=1;fontSize=18;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Користувач" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="185" y="70" width="50" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="&lt;b&gt;Main&lt;/b&gt;&lt;br&gt;&lt;i&gt;main()&lt;br&gt;printMenu()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="&lt;b&gt;Input&lt;/b&gt;&lt;br&gt;&lt;i&gt;readMenuChoice()&lt;br&gt;readMeasurement()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="&lt;b&gt;Validation&lt;/b&gt;&lt;br&gt;&lt;i&gt;validateMeasurement()&lt;br&gt;rangeMessage()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="&lt;b&gt;State&lt;/b&gt;&lt;br&gt;&lt;i&gt;addMeasurement()&lt;br&gt;measurements[MAX_MEASUREMENTS]&lt;br&gt;measurementCount&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="300" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="&lt;b&gt;Processing&lt;/b&gt;&lt;br&gt;&lt;i&gt;classifySignal()&lt;br&gt;severityRank()&lt;br&gt;calculateAverages()&lt;br&gt;findWorst()&lt;br&gt;explainReason()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="560" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="&lt;b&gt;Report&lt;/b&gt;&lt;br&gt;&lt;i&gt;printMeasurement()&lt;br&gt;printMeasurements()&lt;br&gt;printAverages()&lt;br&gt;printWorst()&lt;br&gt;printReport()&lt;br&gt;classToText()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="560" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="keyboard text" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="menu choice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.65;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c4" target="c3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="249" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" value="запит введення:&lt;br&gt;menu choice / measurement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="586" y="230" />
+              <mxPoint x="301" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c12" value="raw measurement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c4" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="validated measurement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c5" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="validation error" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c5" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="measurements[], measurementCount" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c6" target="c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="SignalClass, SignalAverages,&lt;br&gt;worst index + reason" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c7" target="c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" value="menu choice → виклик обробки" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c3" target="c7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="120" />
+              <mxPoint x="1360" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c18" value="report text" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c8" target="c2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="620" />
+              <mxPoint x="40" y="115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c19" value="Main керує циклом меню: за menu choice викликає Input, Processing і Report.&lt;br&gt;Масив measurements і лічильник measurementCount створюються в main() і передаються параметрами (без глобальних змінних)." style="text;html=1;align=left;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="790" width="1100" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
