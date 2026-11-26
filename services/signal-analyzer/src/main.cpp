@@ -98,22 +98,29 @@ bool readMeasurement(SignalMeasurement& measurement) {
 
 // ---------- Validation ----------
 
+// Формує текст помилки з констант, щоб він залишався правильним після зміни меж.
+std::string rangeMessage(const std::string& fieldName, double minValue, double maxValue) {
+    std::ostringstream message;
+    message << fieldName << " має бути від " << minValue << " до " << maxValue;
+    return message.str();
+}
+
 // Перевіряє діапазони всіх полів. Якщо поле некоректне, записує пояснення в errorMessage.
 bool validateMeasurement(const SignalMeasurement& measurement, std::string& errorMessage) {
     if (measurement.deviceId < MIN_DEVICE_ID || measurement.deviceId > MAX_DEVICE_ID) {
-        errorMessage = "deviceId має бути від 1 до 9999";
+        errorMessage = rangeMessage("deviceId", MIN_DEVICE_ID, MAX_DEVICE_ID);
         return false;
     }
     if (measurement.signalLevel < MIN_SIGNAL || measurement.signalLevel > MAX_SIGNAL) {
-        errorMessage = "signalLevel має бути від -150 до 0";
+        errorMessage = rangeMessage("signalLevel", MIN_SIGNAL, MAX_SIGNAL);
         return false;
     }
     if (measurement.latencyMs < MIN_LATENCY || measurement.latencyMs > MAX_LATENCY) {
-        errorMessage = "latencyMs має бути від 0 до 5000";
+        errorMessage = rangeMessage("latencyMs", MIN_LATENCY, MAX_LATENCY);
         return false;
     }
     if (measurement.packetLossPercent < MIN_LOSS || measurement.packetLossPercent > MAX_LOSS) {
-        errorMessage = "packetLossPercent має бути від 0 до 100";
+        errorMessage = rangeMessage("packetLossPercent", MIN_LOSS, MAX_LOSS);
         return false;
     }
     return true;
@@ -315,7 +322,8 @@ int main() {
         printMenu();
         choice = readMenuChoice();
         if (choice < MENU_EXIT || choice > MENU_MAX) {
-            std::cout << "Невідомий пункт меню. Введіть число від 0 до 5.\n";
+            std::cout << "Невідомий пункт меню. Введіть число від " << MENU_EXIT
+                      << " до " << MENU_MAX << ".\n";
             continue;
         }
 
