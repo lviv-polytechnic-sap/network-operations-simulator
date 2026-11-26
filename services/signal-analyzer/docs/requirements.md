@@ -29,6 +29,12 @@ struct SignalMeasurement {
     double packetLossPercent;  // втрати пакетів, %
 };
 
+struct SignalAverages {
+    double avgSignalLevel;         // середній рівень сигналу, dBm
+    double avgLatencyMs;           // середня затримка, мс
+    double avgPacketLossPercent;   // середні втрати, %
+};
+
 enum class SignalClass { GOOD, DEGRADED, CRITICAL };
 
 const int MAX_MEASUREMENTS = 100;
@@ -104,7 +110,7 @@ int measurementCount = 0;                          // 0..MAX_MEASUREMENTS
 
 ### FR-2.4 Середні значення
 
-Функція `calculateAverages` обчислює середні `signalLevel`, `latencyMs` і `packetLossPercent` за всіма збереженими вимірюваннями.
+Функція `calculateAverages` обчислює середні `signalLevel`, `latencyMs` і `packetLossPercent` за всіма збереженими вимірюваннями і повертає їх у структурі `SignalAverages`.
 
 Критерії приймання:
 
