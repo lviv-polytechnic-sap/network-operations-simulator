@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="data-model-drawio" name="Модель даних">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c1" value="Модель даних — Signal Analyzer (Команда 2)" style="text;html=1;fontSize=18;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="struct SignalMeasurement" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="90" width="360" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="deviceId : int  [1 … 9999]" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c2">
+          <mxGeometry y="30" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="signalLevel : int  [-150 … 0] dBm" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c2">
+          <mxGeometry y="56" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="latencyMs : int  [0 … 5000] мс" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c2">
+          <mxGeometry y="82" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="packetLossPercent : double  [0.0 … 100.0] %" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c2">
+          <mxGeometry y="108" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="Стан у main()" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d5e8d4;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="400" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="measurements : SignalMeasurement[MAX_MEASUREMENTS]" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c7">
+          <mxGeometry y="30" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="measurementCount : int  [0 … MAX_MEASUREMENTS]" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c7">
+          <mxGeometry y="56" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="enum class SignalClass" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="90" width="240" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="GOOD" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c10">
+          <mxGeometry y="30" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="DEGRADED" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c10">
+          <mxGeometry y="56" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="CRITICAL" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c10">
+          <mxGeometry y="82" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="struct SignalAverages" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffe6cc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="640" y="380" width="360" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="avgSignalLevel : double" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c14">
+          <mxGeometry y="30" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="avgLatencyMs : double" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c14">
+          <mxGeometry y="56" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" value="avgPacketLossPercent : double" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c14">
+          <mxGeometry y="82" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" value="Константи (const)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f5f5f5;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="400" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" value="MAX_MEASUREMENTS = 100" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="30" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" value="CRITICAL_SIGNAL = -100   |  DEGRADED_SIGNAL = -85" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="56" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="CRITICAL_LATENCY = 300   |  DEGRADED_LATENCY = 150" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="82" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="CRITICAL_LOSS = 20.0     |  DEGRADED_LOSS = 5.0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="108" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="MIN_DEVICE_ID = 1, MAX_DEVICE_ID = 9999" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="134" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" value="MIN_SIGNAL = -150, MAX_SIGNAL = 0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="160" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" value="MAX_LATENCY = 5000, MAX_LOSS = 100.0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="186" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" value="містить&lt;br&gt;0..100 записів" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c7" target="c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" value="classifySignal()&lt;br&gt;→ SignalClass" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" value="calculateAverages(measurements,&lt;br&gt;measurementCount) → SignalAverages&lt;br&gt;(лише якщо measurementCount &amp;gt; 0)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c29" value="MAX_MEASUREMENTS&lt;br&gt;обмежує розмір масиву" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c30" value="порогові значення&lt;br&gt;для класифікації" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c31" value="Суцільна лінія з ромбом — масив зберігає записи (композиція), індекси 0 … measurementCount-1.&lt;br&gt;Пунктир — значення обчислюється функцією або обмежується константою.&lt;br&gt;SignalClass не зберігається у структурі, а обчислюється classifySignal() під час виведення." style="text;html=1;align=left;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="1000" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
