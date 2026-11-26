@@ -56,7 +56,7 @@
           <mxGeometry y="82" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="c18" value="Константи (const)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f5f5f5;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="40" y="380" width="400" height="212" as="geometry" />
+          <mxGeometry x="40" y="380" width="400" height="264" as="geometry" />
         </mxCell>
         <mxCell id="c19" value="MAX_MEASUREMENTS = 100" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
           <mxGeometry y="30" width="400" height="26" as="geometry" />
@@ -76,30 +76,36 @@
         <mxCell id="c24" value="MIN_SIGNAL = -150, MAX_SIGNAL = 0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
           <mxGeometry y="160" width="400" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="c25" value="MAX_LATENCY = 5000, MAX_LOSS = 100.0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+        <mxCell id="c25" value="MIN_LATENCY = 0, MAX_LATENCY = 5000" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
           <mxGeometry y="186" width="400" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="c26" value="містить&lt;br&gt;0..100 записів" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c7" target="c2">
+        <mxCell id="c26" value="MIN_LOSS = 0.0, MAX_LOSS = 100.0" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="212" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" value="NOT_FOUND = -1 (findWorst для порожнього масиву)" style="text;html=1;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" vertex="1" parent="c18">
+          <mxGeometry y="238" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" value="містить&lt;br&gt;0..100 записів" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c7" target="c2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c27" value="classifySignal()&lt;br&gt;→ SignalClass" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c10">
+        <mxCell id="c29" value="classifySignal()&lt;br&gt;→ SignalClass" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c28" value="calculateAverages(measurements,&lt;br&gt;measurementCount) → SignalAverages&lt;br&gt;(лише якщо measurementCount &amp;gt; 0)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c14">
+        <mxCell id="c30" value="calculateAverages(measurements,&lt;br&gt;measurementCount) → SignalAverages&lt;br&gt;(лише якщо measurementCount &amp;gt; 0)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c2" target="c14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c29" value="MAX_MEASUREMENTS&lt;br&gt;обмежує розмір масиву" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c7">
+        <mxCell id="c31" value="MAX_MEASUREMENTS&lt;br&gt;обмежує розмір масиву" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c30" value="порогові значення&lt;br&gt;для класифікації" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c10">
+        <mxCell id="c32" value="порогові значення&lt;br&gt;для класифікації" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="c18" target="c10">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1340" y="545" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="c31" value="Суцільна лінія з ромбом — масив зберігає записи (композиція), індекси 0 … measurementCount-1.&lt;br&gt;Пунктир — значення обчислюється функцією або обмежується константою.&lt;br&gt;SignalClass не зберігається у структурі, а обчислюється classifySignal() під час виведення." style="text;html=1;align=left;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="40" y="640" width="1000" height="60" as="geometry" />
+        <mxCell id="c33" value="Суцільна лінія з ромбом — масив зберігає записи (композиція), індекси 0 … measurementCount-1.&lt;br&gt;Пунктир — значення обчислюється функцією або обмежується константою.&lt;br&gt;SignalClass не зберігається у структурі, а обчислюється classifySignal() під час виведення." style="text;html=1;align=left;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="720" width="1000" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
