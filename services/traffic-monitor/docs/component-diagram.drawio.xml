@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Сторінка-1" id="FA6sJRKme-mcWcOqL0qR">
+    <mxGraphModel dx="394" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6y490vQPOC7cnF1ST4aq-12" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320.00000000000006" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-13" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-1" parent="1" style="whiteSpace=wrap;html=1;" value="Main Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-11" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-2" parent="1" style="whiteSpace=wrap;html=1;" value="Validation Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-10" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="510" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-3" parent="1" style="whiteSpace=wrap;html=1;" value="Input Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="260" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-14" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-15" edge="1" parent="1" source="6y490vQPOC7cnF1ST4aq-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6y490vQPOC7cnF1ST4aq-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-4" parent="1" style="whiteSpace=wrap;html=1;" value="Processing Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-5" parent="1" style="whiteSpace=wrap;html=1;" value="Report Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="6y490vQPOC7cnF1ST4aq-6" parent="1" style="whiteSpace=wrap;html=1;" value="State Component&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="260" y="640" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
