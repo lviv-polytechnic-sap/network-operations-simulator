@@ -8,40 +8,25 @@
           <mxGeometry height="30" width="420" x="40" y="30" as="geometry" />
         </mxCell>
         <mxCell id="incident-struct" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="&lt;&lt;struct&gt;&gt;&#xa;Incident" vertex="1">
-          <mxGeometry height="170" width="320" x="40" y="90" as="geometry" />
+          <mxGeometry height="170" width="440" x="40" y="90" as="geometry" />
         </mxCell>
         <mxCell id="field-id" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ id : int  [id &gt; 0, unique]" vertex="1">
-          <mxGeometry height="26" width="320" y="40" as="geometry" />
+          <mxGeometry height="26" width="440" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="field-source" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ source : std::string  [non-empty, 1..64 chars]" vertex="1">
-          <mxGeometry height="26" width="320" y="66" as="geometry" />
+        <mxCell id="field-source" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ source : std::string  [non-empty, e.g. router-1]" vertex="1">
+          <mxGeometry height="26" width="440" y="66" as="geometry" />
         </mxCell>
-        <mxCell id="field-category" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ category : std::string  [non-empty, e.g. Network]" vertex="1">
-          <mxGeometry height="26" width="320" y="92" as="geometry" />
+        <mxCell id="field-category" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ category : std::string  [SIGNAL | OVERLOAD | DEVICE_OFFLINE | DATA_ERROR]" vertex="1">
+          <mxGeometry height="26" width="440" y="92" as="geometry" />
         </mxCell>
-        <mxCell id="field-severity" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ severity : Severity  [INFO | WARNING | CRITICAL]" vertex="1">
-          <mxGeometry height="26" width="320" y="118" as="geometry" />
+        <mxCell id="field-severity" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ severity : std::string  [INFO | WARNING | CRITICAL]" vertex="1">
+          <mxGeometry height="26" width="440" y="118" as="geometry" />
         </mxCell>
         <mxCell id="field-resolved" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ resolved : bool  [default: false]" vertex="1">
-          <mxGeometry height="26" width="320" y="144" as="geometry" />
+          <mxGeometry height="26" width="440" y="144" as="geometry" />
         </mxCell>
-        <mxCell id="enum-severity" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" value="&lt;&lt;enum class&gt;&gt;&#xa;Severity" vertex="1">
-          <mxGeometry height="118" width="240" x="450" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="sev-1" parent="enum-severity" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="INFO = 1" vertex="1">
-          <mxGeometry height="26" width="240" y="40" as="geometry" />
-        </mxCell>
-        <mxCell id="sev-2" parent="enum-severity" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="WARNING = 2" vertex="1">
-          <mxGeometry height="26" width="240" y="66" as="geometry" />
-        </mxCell>
-        <mxCell id="sev-3" parent="enum-severity" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="CRITICAL = 3 (Escalated)" vertex="1">
-          <mxGeometry height="26" width="240" y="92" as="geometry" />
-        </mxCell>
-        <mxCell id="edge-1" edge="1" parent="1" source="field-severity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;strokeColor=#666666;" target="enum-severity">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="note-rules" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=10;fontSize=12;size=16;" value="Правило ескалації: якщо для одного source додається 3-й активний (resolved == false) інцидент рівня WARNING, його severity автоматично змінюється на CRITICAL." vertex="1">
-          <mxGeometry height="70" width="650" x="40" y="290" as="geometry" />
+        <mxCell id="note-rules" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;spacingRight=10;fontSize=12;size=16;" value="Обмеження та правила (MAX_INCIDENTS = 100):&#xa;1. Зберігається у статичному масиві Incident incidents[MAX_INCIDENTS].&#xa;2. Правило ескалації: якщо для одного source додається 3-й активний (resolved == false) інцидент рівня WARNING, його severity автоматично змінюється на CRITICAL." vertex="1">
+          <mxGeometry height="85" width="650" x="40" y="290" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
