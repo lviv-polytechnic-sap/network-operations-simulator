@@ -4,7 +4,7 @@
 * **id** (`int`) — унікальний номер інциденту (`> 0`).
 * **source** (`std::string`) — назва пристрою/джерела, де стався збій, наприклад `router-1` (непорожній рядок).
 * **category** (`std::string` або `enum`) — одна з 4 дозволених категорій: `SIGNAL`, `OVERLOAD`, `DEVICE_OFFLINE`, `DATA_ERROR`.
-* **severity** (`Severity`) — рівень критичності: `INFO`, `WARNING`, `CRITICAL`.
+* **severity** (`std::string`) — рівень критичності: `INFO`, `WARNING`, `CRITICAL`.
 * **resolved** (`bool`) — статус вирішення: `false` (відкритий) або `true` (закритий).
 
 ## Правила бізнес-логіки (FR-5.1 – FR-5.5)
