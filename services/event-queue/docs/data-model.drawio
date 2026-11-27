@@ -1,0 +1,62 @@
+<mxfile host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36">
+  <diagram id="9f46799a-70d6-7492-0946-bef42562c5a5" name="Страница-1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="78961159f06e98e8-17" parent="1" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Event&lt;/font&gt;" vertex="1">
+          <mxGeometry height="137" width="160" x="280" y="120" as="geometry">
+            <mxRectangle height="30" width="110" x="90" y="83" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="78961159f06e98e8-21" parent="78961159f06e98e8-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="id: int (id &amp;gt; 0, unique)" vertex="1">
+          <mxGeometry height="26" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-23" parent="78961159f06e98e8-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="priority: int (1 - 3)" vertex="1">
+          <mxGeometry height="26" width="160" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-25" parent="78961159f06e98e8-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="source: string (not empty)" vertex="1">
+          <mxGeometry height="26" width="160" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-26" parent="78961159f06e98e8-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="message: string (not empty)" vertex="1">
+          <mxGeometry height="26" width="160" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;Data Model: Event Queue&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="254" x="395" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-2" parent="1" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Constants and State&lt;/font&gt;" vertex="1">
+          <mxGeometry height="137" width="210" x="600" y="120" as="geometry">
+            <mxRectangle height="30" width="110" x="90" y="83" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-3" parent="0yg_Qvf7gTAAy1ntX86_-2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="MAX_EVENTS = 100" vertex="1">
+          <mxGeometry height="26" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-4" parent="0yg_Qvf7gTAAy1ntX86_-2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="queue[MAX_EVENTS]: Event" vertex="1">
+          <mxGeometry height="26" width="210" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-5" parent="0yg_Qvf7gTAAy1ntX86_-2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="eventCount: int (0 - MAX_EVENTS)" vertex="1">
+          <mxGeometry height="26" width="210" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Contains 0 - 100 Event" vertex="1">
+          <mxGeometry height="30" width="140" x="450" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-10" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;1. Selection rule (for findNextEvent):&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;-Highest priority first (3 -&amp;gt; 1);&lt;/p&gt;&lt;p&gt;-If priority is equal, the smaller id goes first.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="520" x="280" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-11" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;2. Removal (Array Shift):&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;-After removing element, the following elements s&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;hift left by one position, eventCount decreases by 1.&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="520" x="280" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-12" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;3. Validation rules:&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;-id &amp;gt; 0 and unique;&lt;/p&gt;&lt;p&gt;-priority in range 1 - 3;&lt;/p&gt;&lt;p&gt;-source and message are not empty;&lt;/p&gt;&lt;p&gt;-queue is full when eventCount = MAX_EVENTS(100)&lt;/p&gt;" vertex="1">
+          <mxGeometry height="150" width="520" x="280" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="0yg_Qvf7gTAAy1ntX86_-13" edge="1" parent="1" source="0yg_Qvf7gTAAy1ntX86_-5" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=gap;entryX=0.999;entryY=0.937;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.001;exitY=-0.084;exitDx=0;exitDy=0;exitPerimeter=0;" target="78961159f06e98e8-23" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="520" y="250" as="sourcePoint" />
+            <mxPoint x="570" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
