@@ -1,40 +1,150 @@
-<mxfile host="app.diagrams.net"><diagram name="Main Flowchart" id="fc1"><mxGraphModel dx="1300" dy="950" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1100" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
-<mxCell id="t" parent="1" style="text;html=1;fontSize=18;fontStyle=1;" value="Main Flowchart: Incident Manager (Team 5)" vertex="1"><mxGeometry x="40" y="20" width="480" height="30" as="geometry"/></mxCell>
-<mxCell id="s" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Start" vertex="1"><mxGeometry x="480" y="60" width="140" height="50" as="geometry"/></mxCell>
-<mxCell id="in" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Incident incidents[MAX_INCIDENTS]&#xa;incidentCount = 0" vertex="1"><mxGeometry x="430" y="140" width="240" height="55" as="geometry"/></mxCell>
-<mxCell id="e1" edge="1" parent="1" source="s" target="in" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="m" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Output Menu (1, 2, 3, 0)&#xa;Input choice" vertex="1"><mxGeometry x="430" y="225" width="240" height="55" as="geometry"/></mxCell>
-<mxCell id="e2" edge="1" parent="1" source="in" target="m" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="cc" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Is input numeric?" vertex="1"><mxGeometry x="465" y="310" width="170" height="75" as="geometry"/></mxCell>
-<mxCell id="e3" edge="1" parent="1" source="m" target="cc" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="ec" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" value="clearInputBuffer()&#xa;Output Input error" vertex="1"><mxGeometry x="170" y="320" width="200" height="55" as="geometry"/></mxCell>
-<mxCell id="ecn" edge="1" parent="1" source="cc" target="ec" value="Ні" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="ecl" edge="1" parent="1" source="ec" target="m" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="120" y="347"/><mxPoint x="120" y="252"/></Array></mxGeometry></mxCell>
-<mxCell id="ce" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 0?" vertex="1"><mxGeometry x="470" y="415" width="160" height="70" as="geometry"/></mxCell>
-<mxCell id="ecy" edge="1" parent="1" source="cc" target="ce" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="en" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="End" vertex="1"><mxGeometry x="750" y="425" width="140" height="50" as="geometry"/></mxCell>
-<mxCell id="eey" edge="1" parent="1" source="ce" target="en" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="c1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 1?" vertex="1"><mxGeometry x="470" y="515" width="160" height="70" as="geometry"/></mxCell>
-<mxCell id="een" edge="1" parent="1" source="ce" target="c1" value="Ні" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="p1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="readIncident()&#xa;validateIncident()" vertex="1"><mxGeometry x="180" y="520" width="190" height="60" as="geometry"/></mxCell>
-<mxCell id="ec1y" edge="1" parent="1" source="c1" target="p1" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="cv" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Valid &amp;&amp; space?" vertex="1"><mxGeometry x="195" y="615" width="160" height="70" as="geometry"/></mxCell>
-<mxCell id="ev1" edge="1" parent="1" source="p1" target="cv" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="sv" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Save to incidents[]&#xa;If 3rd WARNING -> CRITICAL" vertex="1"><mxGeometry x="165" y="720" width="220" height="60" as="geometry"/></mxCell>
-<mxCell id="evy" edge="1" parent="1" source="cv" target="sv" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="c2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 2?" vertex="1"><mxGeometry x="470" y="615" width="160" height="70" as="geometry"/></mxCell>
-<mxCell id="ec1n" edge="1" parent="1" source="c1" target="c2" value="Ні" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="p2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="showOpenIncidents()" vertex="1"><mxGeometry x="720" y="625" width="180" height="50" as="geometry"/></mxCell>
-<mxCell id="ec2y" edge="1" parent="1" source="c2" target="p2" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="c3" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 3?" vertex="1"><mxGeometry x="470" y="715" width="160" height="70" as="geometry"/></mxCell>
-<mxCell id="ec2n" edge="1" parent="1" source="c2" target="c3" value="Ні" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="p3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="closeIncidentById()" vertex="1"><mxGeometry x="720" y="725" width="180" height="50" as="geometry"/></mxCell>
-<mxCell id="ec3y" edge="1" parent="1" source="c3" target="p3" value="Так" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="eo" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Output Invalid option" vertex="1"><mxGeometry x="460" y="820" width="180" height="50" as="geometry"/></mxCell>
-<mxCell id="ec3n" edge="1" parent="1" source="c3" target="eo" value="Ні" style="endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
-<mxCell id="ll" edge="1" parent="1" source="sv" target="m" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="90" y="750"/><mxPoint x="90" y="252"/></Array></mxGeometry></mxCell>
-<mxCell id="lv" edge="1" parent="1" source="cv" target="m" value="Ні" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="90" y="650"/><mxPoint x="90" y="252"/></Array></mxGeometry></mxCell>
-<mxCell id="lr1" edge="1" parent="1" source="p2" target="m" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="950" y="650"/><mxPoint x="950" y="252"/></Array></mxGeometry></mxCell>
-<mxCell id="lr2" edge="1" parent="1" source="p3" target="m" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="950" y="750"/><mxPoint x="950" y="252"/></Array></mxGeometry></mxCell>
-<mxCell id="lb" edge="1" parent="1" source="eo" target="m" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="950" y="845"/><mxPoint x="950" y="252"/></Array></mxGeometry></mxCell>
-</root></mxGraphModel></diagram></mxfile>
+<mxGraphModel dx="1144" dy="692" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="t" parent="1" style="text;html=1;fontSize=18;fontStyle=1;" value="Main Flowchart: Incident Manager (Team 5)" vertex="1">
+      <mxGeometry height="30" width="480" x="40" y="20" as="geometry" />
+    </mxCell>
+    <mxCell id="s" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Start" vertex="1">
+      <mxGeometry height="50" width="140" x="480" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="in" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Incident incidents[MAX_INCIDENTS]&#xa;incidentCount = 0" vertex="1">
+      <mxGeometry height="55" width="240" x="430" y="140" as="geometry" />
+    </mxCell>
+    <mxCell id="e1" edge="1" parent="1" source="s" style="endArrow=block;endFill=1;" target="in">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="m" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Output Menu (1, 2, 3, 0)&#xa;Input choice" vertex="1">
+      <mxGeometry height="55" width="240" x="430" y="225" as="geometry" />
+    </mxCell>
+    <mxCell id="e2" edge="1" parent="1" source="in" style="endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="cc" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Is input numeric?" vertex="1">
+      <mxGeometry height="75" width="170" x="465" y="310" as="geometry" />
+    </mxCell>
+    <mxCell id="e3" edge="1" parent="1" source="m" style="endArrow=block;endFill=1;" target="cc">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ec" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" value="clearInputBuffer()&#xa;Output Input error" vertex="1">
+      <mxGeometry height="55" width="200" x="170" y="320" as="geometry" />
+    </mxCell>
+    <mxCell id="ecn" edge="1" parent="1" source="cc" style="endArrow=block;endFill=1;" target="ec" value="Ні">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ecl" edge="1" parent="1" source="ec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="120" y="347" />
+          <mxPoint x="120" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="ce" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 0?" vertex="1">
+      <mxGeometry height="70" width="160" x="470" y="415" as="geometry" />
+    </mxCell>
+    <mxCell id="ecy" edge="1" parent="1" source="cc" style="endArrow=block;endFill=1;" target="ce" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="en" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="End" vertex="1">
+      <mxGeometry height="50" width="140" x="750" y="425" as="geometry" />
+    </mxCell>
+    <mxCell id="eey" edge="1" parent="1" source="ce" style="endArrow=block;endFill=1;" target="en" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 1?" vertex="1">
+      <mxGeometry height="70" width="160" x="470" y="515" as="geometry" />
+    </mxCell>
+    <mxCell id="een" edge="1" parent="1" source="ce" style="endArrow=block;endFill=1;" target="c1" value="Ні">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="p1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="readIncident()&#xa;validateIncident()" vertex="1">
+      <mxGeometry height="60" width="190" x="180" y="520" as="geometry" />
+    </mxCell>
+    <mxCell id="ec1y" edge="1" parent="1" source="c1" style="endArrow=block;endFill=1;" target="p1" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="cv" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Valid &amp;&amp; space?" vertex="1">
+      <mxGeometry height="70" width="160" x="195" y="615" as="geometry" />
+    </mxCell>
+    <mxCell id="ev1" edge="1" parent="1" source="p1" style="endArrow=block;endFill=1;" target="cv">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="sv" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Save to incidents[]&#xa;If 3rd WARNING -&gt; CRITICAL" vertex="1">
+      <mxGeometry height="60" width="220" x="165" y="720" as="geometry" />
+    </mxCell>
+    <mxCell id="evy" edge="1" parent="1" source="cv" style="endArrow=block;endFill=1;" target="sv" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 2?" vertex="1">
+      <mxGeometry height="70" width="160" x="470" y="615" as="geometry" />
+    </mxCell>
+    <mxCell id="ec1n" edge="1" parent="1" source="c1" style="endArrow=block;endFill=1;" target="c2" value="Ні">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="p2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="showOpenIncidents()" vertex="1">
+      <mxGeometry height="50" width="180" x="720" y="625" as="geometry" />
+    </mxCell>
+    <mxCell id="ec2y" edge="1" parent="1" source="c2" style="endArrow=block;endFill=1;" target="p2" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c3" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="choice == 3?" vertex="1">
+      <mxGeometry height="70" width="160" x="470" y="715" as="geometry" />
+    </mxCell>
+    <mxCell id="ec2n" edge="1" parent="1" source="c2" style="endArrow=block;endFill=1;" target="c3" value="Ні">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="p3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="closeIncidentById()" vertex="1">
+      <mxGeometry height="50" width="180" x="720" y="725" as="geometry" />
+    </mxCell>
+    <mxCell id="ec3y" edge="1" parent="1" source="c3" style="endArrow=block;endFill=1;" target="p3" value="Так">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="eo" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Output Invalid option" vertex="1">
+      <mxGeometry height="50" width="180" x="460" y="820" as="geometry" />
+    </mxCell>
+    <mxCell id="ec3n" edge="1" parent="1" source="c3" style="endArrow=block;endFill=1;" target="eo" value="Ні">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ll" edge="1" parent="1" source="sv" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="90" y="750" />
+          <mxPoint x="90" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lv" edge="1" parent="1" source="cv" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m" value="Ні">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="90" y="650" />
+          <mxPoint x="90" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lr1" edge="1" parent="1" source="p2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="950" y="650" />
+          <mxPoint x="950" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lr2" edge="1" parent="1" source="p3" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="950" y="750" />
+          <mxPoint x="950" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lb" edge="1" parent="1" source="eo" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="m">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="950" y="845" />
+          <mxPoint x="950" y="252" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
