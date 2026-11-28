@@ -1,109 +1,163 @@
 # Event Queue — Requirements
 
+Team 4 · Service directory: `services/event-queue/` · Related Issue: #1
+
 ## 1. Purpose
 
 The Event Queue service is a console application written in C++17. Its purpose is to simulate the storage and processing of events according to their priority and arrival order.
 
-The service is an educational simulation. It does not use real telecommunications protocols, external networks, databases, or communication between services.
+The service is an educational simulation. It does not use real telecommunications protocols, external networks, databases, files, or communication between services.
 
-## 2. Data Model
+## 2. Actors and External Data (context diagram)
 
-Each event is represented by an `Event` structure with the following fields:
+| Direction | Data |
+|---|---|
+| User → Event Queue | event data (id, priority, source, message), menu command, event id for removal |
+| Event Queue → User | queue state, processed event, statistics, error message |
+| Services 1, 2, 3, 6 → Event Queue | event data — **future integration, not in v1.0.0** |
 
-- `id` — unique event identifier.
-- `priority` — event priority, from 1 to 3.
-- `source` — source of the event.
-- `message` — description of the event.
+## 3. Data Model (data model diagram)
 
-Events must be stored in a fixed-size array with a maximum capacity of 100 events.
+### 3.1 Structure `Event`
 
-## 3. Functional Requirements
+| Field | Type | Allowed values |
+|---|---|---|
+| `id` | `int` | greater than 0, unique within the queue |
+| `priority` | `int` | 1, 2 or 3 (3 is the highest) |
+| `source` | `std::string` | not empty |
+| `message` | `std::string` | not empty |
 
-### FR-1: Add an event
+### 3.2 Constants and state
 
-The user can add a new event to the queue.
+| Name | Type | Meaning |
+|---|---|---|
+| `MAX_EVENTS` | `const int` = 100 | maximum number of events |
+| `MIN_PRIORITY` | `const int` = 1 | lowest allowed priority |
+| `MAX_PRIORITY` | `const int` = 3 | highest allowed priority |
+| `queue[MAX_EVENTS]` | array of `Event` | events stored in arrival order |
+| `eventCount` | `int`, 0 to `MAX_EVENTS` | number of events currently in the queue |
 
-The application must validate the event before adding it. An event must not be added if its identifier is already in use or its data is invalid.
+`queue` and `eventCount` are declared in `main` and passed to functions as parameters. No global variables are used.
 
-The application must not exceed the maximum capacity of 100 events.
+### 3.3 Invariant
 
-### FR-2: Display the queue
+After every operation:
 
-The user can display the current queue of events.
+- `0 <= eventCount <= MAX_EVENTS`;
+- elements `queue[0] … queue[eventCount - 1]` are valid events stored in arrival order;
+- all ids in `queue[0] … queue[eventCount - 1]` are unique.
 
-Events must be displayed in the order determined by the agreed queue-processing rules.
+## 4. Functional Requirements
 
-### FR-3: Process the next event
+### FR-4.1: Add an event (menu option 1)
 
-The user can process the next event in the queue.
+- If `eventCount == MAX_EVENTS`, the program prints `Queue is full (100 events). Event not added.` and does not read event data.
+- Otherwise the program reads `id`, `priority`, `source`, `message`.
+- The event is validated (section 6). A valid event is written to `queue[eventCount]` and `eventCount` is increased by 1. The program prints `Event <id> added.`
+- An invalid event is rejected with an error message; the queue does not change.
 
-The event with the highest priority must be processed first. Priority 3 is the highest, followed by priority 2 and priority 1.
+### FR-4.2: Display the queue (menu option 2)
 
-If multiple events have the same priority, the event that arrived first must be processed first.
+- The program prints all events in arrival order: position, id, priority, source, message, and the total number of events.
+- If the queue is empty, the program prints `Queue is empty.`
 
-### FR-4: Remove an event by ID
+### FR-4.3: Process the next event (menu option 3)
 
-The user can remove an event by specifying its identifier.
+- `findNextEvent` performs a linear scan of `queue[0] … queue[eventCount - 1]` and returns the index of the event with the highest priority. If several events have the same priority, the event with the smallest index (the earliest arrival) is selected.
+- `processNext` prints the selected event as the processed event, removes it from the array (section 5, rule 4) and decreases `eventCount` by 1.
+- If the queue is empty, the program prints `Queue is empty. Nothing to process.` and the state does not change.
 
-The application must handle attempts to remove an event that does not exist.
+### FR-4.4: Remove an event by ID (menu option 4)
 
-### FR-5: Display statistics
+- The program reads an id and searches for it with a linear scan.
+- If the event is found, it is removed (section 5, rule 4) and the program prints `Event <id> removed.`
+- If it is not found, the program prints `Event with id <id> not found.` and the queue does not change.
+- If the queue is empty, the program prints `Queue is empty.`
 
-The user can request statistics about the events in the queue.
+### FR-4.5: Display statistics (menu option 5)
 
-The exact statistics to be displayed must be agreed upon by the team before implementation.
+The program prints:
 
-## 4. Validation Rules
+- the total number of events in the queue (`eventCount`);
+- the number of events with priority 3, 2 and 1;
+- the number of free places (`MAX_EVENTS - eventCount`).
 
-- Event identifiers must be unique.
-- Event priority must be an integer from 1 to 3.
-- The queue must not contain more than 100 events.
-- Invalid input must be detected before it changes the application state.
+For an empty queue all counters are 0 and free places are 100. Statistics use only counting and subtraction, so division by zero is impossible.
+
+### Menu option 0: Exit
+
+The program ends.
+
+## 5. Processing Rules
+
+1. Priority 3 is processed first, then priority 2, then priority 1.
+2. Events with the same priority are processed in arrival order (FIFO). The event `id` is **not** used to break ties.
+3. Arrival order equals the array position: new events are appended at index `eventCount`, and removal shifts later elements left, so the relative order is preserved.
+4. Removal of the element at index `k`: elements `queue[k + 1] … queue[eventCount - 1]` are shifted one position to the left, then `eventCount` is decreased by 1.
+5. The next event is found by a linear scan. Linked lists, `priority_queue` and sorting are not used.
+
+## 6. Validation Rules
+
+Validation is performed before any change of the application state. Invalid input never changes `queue` or `eventCount`.
+
+| Input | Rule | Error message |
+|---|---|---|
+| menu option | integer from 0 to 5 | `Invalid menu option. Enter a number from 0 to 5.` |
+| `id` | integer greater than 0 | `Invalid id: enter a positive integer.` |
+| `id` (add) | not already in the queue | `Event with id <id> already exists.` |
+| `priority` | integer from 1 to 3 | `Invalid priority: enter 1, 2 or 3.` |
+| `source` | not empty and not only spaces | `Source must not be empty.` |
+| `message` | not empty and not only spaces | `Message must not be empty.` |
+| queue size (add) | `eventCount < MAX_EVENTS` | `Queue is full (100 events). Event not added.` |
+
+If a number is expected and the user enters text, the input stream is cleared, the rest of the line is discarded, the error message is printed, and the program returns to the menu. `source` and `message` are read as whole lines and may contain spaces.
+
+## 7. Technical Constraints
+
+- The application must use C++17 and only the standard C++ library.
+- Events must be stored in a fixed-size array of `Event`; the array size is `MAX_EVENTS`.
 - The program must not access elements outside the array boundaries.
-- Empty-queue situations must be handled safely.
-- The application must provide understandable messages for invalid input and unsuccessful operations.
+- All limits (`MAX_EVENTS`, `MIN_PRIORITY`, `MAX_PRIORITY`) are stored as `const`.
+- No global variables.
+- The program is divided into functions matching the component diagram:
 
-Additional validation rules for event identifiers, sources, and messages must be clarified by the team.
+| Component | Functions |
+|---|---|
+| Input | `readEvent` |
+| Validation | `validateEvent` |
+| Processing | `enqueue`, `findNextEvent`, `processNext`, `removeById` |
+| State | `queue`, `eventCount` |
+| Report | `printQueue`, `printStatistics` |
+| Main | menu loop and calls of the functions above |
 
-## 5. Technical Constraints
-
-- The application must use C++17.
-- Only the standard C++ library may be used for the main algorithm.
-- Events must be stored in a fixed-size array.
-- The next event must be selected by a linear scan of the array.
-- Linked lists and `priority_queue` must not be used.
-- The program must compile locally with the following command:
+- The program must compile without errors and warnings with:
 
 `g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o app`
 
-## 6. Expected Output
+## 8. Clarified Decisions
 
-The application must provide:
+The open questions from the first version were agreed as follows:
 
-- confirmation or an error message after an operation;
-- a readable representation of the current queue;
-- information about the event processed or removed;
-- the requested statistics.
+| # | Question | Decision |
+|---|---|---|
+| 1 | What statistics are displayed? | Total events, count per priority 3/2/1, free places (FR-4.5) |
+| 2 | What format is allowed for ids? | Positive integer (`int > 0`), unique within the queue |
+| 3 | Can `source` or `message` be empty? | No. Empty or space-only values are rejected; no length limit (`std::string`) |
+| 4 | Processing an empty queue? | Message `Queue is empty. Nothing to process.`; state unchanged |
+| 5 | Removing an id that does not exist? | Message `Event with id <id> not found.`; state unchanged |
+| 6 | Display in processing or arrival order? | Arrival order (array order); processing order applies only to FR-4.3 |
+| 7 | Tie-break for equal priority? | Arrival order (smallest array index), not the smaller id |
+| 8 | Adding to a full queue? | Rejected with a message; state unchanged |
 
-The exact format of the output will be defined during implementation.
+## 9. Future Integration (not implemented in v1.0.0)
 
-## 7. Unclear Points to Clarify
+Services 1, 2, 3 and 6 may later send events to the Event Queue as text records in the shared format `EVENT;id;type;severity;source`. The `severity` value would be mapped to `priority`. This contract is shown with dashed lines on the context diagram and is **not** implemented in the first assignment.
 
-The following details must be agreed upon by the team before implementation:
+## 10. Acceptance Criteria
 
-1. What exact statistics should the application display?
-2. What formats are allowed for event identifiers?
-3. Can `source` or `message` be empty, and should they have length limits?
-4. What should happen when the user attempts to process an empty queue?
-5. What should happen when the user attempts to remove an event that does not exist?
-6. Should the queue display events in processing order or in their original arrival order?
-
-These decisions must be reflected in the final requirements, data model, algorithm flowchart, implementation, and tests.
-
-## 8. Acceptance Criteria
-
-- All functional requirements are documented.
-- The data model and validation rules are defined.
-- Technical constraints are documented.
-- Unclear requirements are recorded for team clarification.
-- The requirements are reviewed by the team before implementation.
+- All functional requirements FR-4.1 – FR-4.5 are documented with expected behaviour.
+- The data model matches the `Event` structure and state in the data model diagram.
+- Inputs, outputs and validation rules, including error behaviour, are described.
+- All previously unclear points are resolved (section 8).
+- The requirements are consistent with the context and component diagrams.
+- The requirements are reviewed by another team member before implementation.
