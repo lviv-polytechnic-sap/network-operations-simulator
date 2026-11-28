@@ -1,0 +1,116 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="3W2Ee0fm2XrGbQ-6bGq7" name="Страница-1">
+    <mxGraphModel dx="1046" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="comp-main" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;arcSize=10;" value="&lt;b&gt;Main&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;(&lt;code&gt;main&lt;/code&gt;)&lt;br&gt;Цикл меню, перевірка ліміту MAX_INCIDENTS та координація викликів&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="450" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-input" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;arcSize=10;" value="&lt;b&gt;Input&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;(&lt;code&gt;readIncident&lt;/code&gt;, &lt;code&gt;clearInputBuffer&lt;/code&gt;)&lt;br&gt;Зчитування команд та сирих даних з консолі&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="260" x="80" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-val" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;arcSize=10;" value="&lt;b&gt;Validation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;(&lt;code&gt;validateIncident&lt;/code&gt;, &lt;code&gt;isDuplicateId&lt;/code&gt;,&lt;br&gt;&lt;code&gt;isValidCategory&lt;/code&gt;, &lt;code&gt;isValidSeverity&lt;/code&gt;)&lt;br&gt;Перевірка ID, порожніх полів, категорій та рівнів&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="270" x="80" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-proc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;arcSize=10;" value="&lt;b&gt;Processing&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;(&lt;code&gt;countOpenWarningsBySource&lt;/code&gt;,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;Warning counting and escalation logic in main())&lt;/span&gt;&lt;br&gt;Додавання, ескалація до CRITICAL та закриття інцидентів&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="260" x="450" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-state" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=13;arcSize=10;" value="&lt;b&gt;State&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;code&gt;Incident incidents[MAX_INCIDENTS]&lt;/code&gt;&lt;br&gt;&lt;code&gt;int incidentCount&lt;/code&gt;, &lt;code&gt;bool resolved,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193)); font-family: Helvetica;&quot;&gt;closeIncidentById()&lt;/span&gt;&lt;br&gt;&lt;/code&gt;Зберігання масиву інцидентів та лічильника&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="250" x="830" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="comp-rep" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;arcSize=10;" value="&lt;b&gt;Report / Output&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;(&lt;code&gt;showOpenIncidents&lt;/code&gt;, &lt;code&gt;std::cout&lt;/code&gt;)&lt;br&gt;Виведення списку відкритих інцидентів та статусів&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="250" x="830" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-1" edge="1" parent="1" source="comp-main" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0;exitY=0.35;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="comp-input" value="input request (menu / incident)">
+          <mxGeometry relative="1" x="-0.2" y="14" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="210" y="78" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" edge="1" parent="1" source="comp-input" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;" target="comp-main" value="&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;incident data / read result&lt;/span&gt;">
+          <mxGeometry relative="1" x="-0.15" y="12" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="489" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" edge="1" parent="1" source="comp-main" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="comp-val" value="tempIncident">
+          <mxGeometry relative="1" x="0.3089" y="-13" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="541" y="373" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-4" edge="1" parent="1" source="comp-val" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="comp-main" value="validation result (true / false)">
+          <mxGeometry relative="1" x="-0.246" y="14" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="580" y="404" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-5" edge="1" parent="1" source="comp-state" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" target="comp-val" value="incidents[], count (duplicate check)">
+          <mxGeometry relative="1" y="12" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="760" y="563" />
+              <mxPoint x="760" y="630" />
+              <mxPoint x="215" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-6" edge="1" parent="1" source="comp-main" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" target="comp-proc" value="validated incident / close call">
+          <mxGeometry relative="1" x="-0.4444" y="38" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-7" edge="1" parent="1" source="comp-proc" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="comp-state" value="&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;add incident / update severity / close request&lt;/font&gt;&lt;/span&gt;">
+          <mxGeometry relative="1" y="12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-8" edge="1" parent="1" source="comp-state" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0;exitY=0.55;exitDx=0;exitDy=0;entryX=1;entryY=0.55;entryDx=0;entryDy=0;" target="comp-proc" value="incident records / count / source">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-9" edge="1" parent="1" source="comp-state" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="comp-rep" value="open incidents list &amp; count">
+          <mxGeometry relative="1" y="14" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-10" edge="1" parent="1" source="comp-val" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#b85450;fontColor=#b85450;" target="comp-rep" value="validation error message">
+          <mxGeometry relative="1" x="0.1" y="12" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="730" y="427" />
+              <mxPoint x="730" y="284" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-11" edge="1" parent="1" source="comp-proc" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=0.85;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" target="comp-rep" value="escalation alert / close status">
+          <mxGeometry relative="1" x="0.15" y="12" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="671" y="345" />
+              <mxPoint x="880" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-12" edge="1" parent="1" source="comp-main" style="endArrow=classic;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="comp-rep" value="print open request / menu">
+          <mxGeometry relative="1" x="-0.1" y="14" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="955" y="78" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
