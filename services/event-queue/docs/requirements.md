@@ -161,3 +161,19 @@ Services 1, 2, 3 and 6 may later send events to the Event Queue as text records 
 - All previously unclear points are resolved (section 8).
 - The requirements are consistent with the context and component diagrams.
 - The requirements are reviewed by another team member before implementation.
+
+
+## 11. Control Examples
+
+| ID | Input sequence | Expected result |
+|---|---|---|
+| CE-1 | Add (id=1, p=2), (id=2, p=3), (id=3, p=3); process next 3 times | Processing order: 2, 3, 1; queue is empty |
+| CE-2 | Add (id=5, p=1), then (id=2, p=1); process next | Event 5 is processed first (arrival order, not smaller id) |
+| CE-3 | Add (id=1, p=2); add (id=1, p=3) | Second event rejected: `Event with id 1 already exists.`; `eventCount` = 1 |
+| CE-4 | Add event with priority 4 | Rejected: `Invalid priority: enter 1, 2 or 3.`; `eventCount` unchanged |
+| CE-5 | Process next on an empty queue | `Queue is empty. Nothing to process.`; `eventCount` = 0 |
+| CE-6 | Queue contains ids 1, 2; remove id 9 | `Event with id 9 not found.`; queue unchanged |
+| CE-7 | After adding the three events of CE-1, show statistics | Total 3; priority 3: 2; priority 2: 1; priority 1: 0; free places: 97 |
+| CE-8 | Enter `abc` as menu option | `Invalid menu option. Enter a number from 0 to 5.`; program returns to menu |
+
+CE-1 is the control example from the project specification. CE-2 confirms the tie-break rule from section 5.
