@@ -1,16 +1,9 @@
-# Device Registry — Team 1
+# Сервіс «Реєстр пристроїв» (services/device-registry) — Команда 1
 
-This directory belongs to Team 1. Students must define the detailed requirements, data model, algorithm, tests, diagrams, and C++17 implementation.
+Навчальний консольний сервіс C++17 для обліку, валідації, пошуку та збору статистики мережевих пристроїв.
 
-Expected final layout:
-
-```text
-device-registry/
-├── README.md
-├── docs/        # .drawio sources and exported PDFs
-├── src/         # C++17 source code
-└── tests/       # documented test scenarios and results
-```
-
-No implementation is provided in the starter repository.
-
+## Інструкція зі збірки та запуску
+```bash
+cd services/device-registry
+g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o app
+./app
