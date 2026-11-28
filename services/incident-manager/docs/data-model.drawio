@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Incident Data Model" id="incident-data-model-v2">
+    <mxGraphModel dx="1100" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Заголовок -->
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1a1a1a;" value="Data Model: Incident Manager (Team 5)" vertex="1">
+          <mxGeometry x="40" y="30" width="460" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Блок структури Incident -->
+        <mxCell id="incident-struct" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;rounded=1;" value="&lt;&lt;struct&gt;&gt;&#xa;Incident" vertex="1">
+          <mxGeometry x="40" y="90" width="460" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="field-id" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ id : int  [id &gt; 0, unique]" vertex="1">
+          <mxGeometry y="42" width="460" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="field-source" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ source : std::string  [non-empty, e.g. router-1]" vertex="1">
+          <mxGeometry y="70" width="460" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="field-category" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ category : std::string  [SIGNAL | OVERLOAD | DEVICE_OFFLINE | DATA_ERROR]" vertex="1">
+          <mxGeometry y="98" width="460" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="field-severity" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ severity : std::string  [INFO | WARNING | CRITICAL]" vertex="1">
+          <mxGeometry y="126" width="460" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="field-resolved" parent="incident-struct" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ resolved : bool  [default: false]" vertex="1">
+          <mxGeometry y="154" width="460" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Блок масиву стану -->
+        <mxCell id="storage-box" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=42;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;rounded=1;" value="&lt;&lt;State&gt;&gt;&#xa;Incident Storage" vertex="1">
+          <mxGeometry x="710" y="120" width="300" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="st-0" parent="storage-box" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ MAX_INCIDENTS : const int = 100" vertex="1">
+          <mxGeometry y="42" width="300" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="st-1" parent="storage-box" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ incidents : Incident[MAX_INCIDENTS]" vertex="1">
+          <mxGeometry y="70" width="300" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="st-2" parent="storage-box" style="text;strokeColor=none;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="+ incidentCount : int  [0..100]" vertex="1">
+          <mxGeometry y="98" width="300" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Гарна рівна підписана стрілка -->
+        <mxCell id="edge-1" edge="1" parent="1" source="incident-struct" target="storage-box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#333333;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-label" connectable="0" parent="edge-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;" value="validated Incident records&#xa;(0..100)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Примітка з правилами -->
+        <mxCell id="note-rules" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f8f9fa;strokeColor=#666666;fontColor=#222222;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;spacingRight=12;fontSize=12;size=16;" value="Правила валідації та бізнес-логіки (FR-5.1 – FR-5.5):&#xa;1. id — унікальний цілий ідентифікатор (&gt; 0). Повторні ID відхиляються.&#xa;2. Правило ескалації: якщо для одного source додається 3-й активний (resolved == false) інцидент рівня WARNING, його severity автоматично змінюється на CRITICAL. Попередні 2 записи залишаються без змін.&#xa;3. Закритий інцидент (resolved == true) не враховується у лічильнику попереджень і не закривається повторно." vertex="1">
+          <mxGeometry x="40" y="310" width="970" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
