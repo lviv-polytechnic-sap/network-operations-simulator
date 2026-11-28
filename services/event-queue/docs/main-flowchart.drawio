@@ -1,0 +1,316 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="mainflow" name="Main flowchart">
+    <mxGraphModel dx="4345" dy="2136" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="2150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;" value="Main Flowchart: Event Queue (Team 4)" vertex="1">
+          <mxGeometry height="30" width="500" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" value="Start" vertex="1">
+          <mxGeometry height="50" width="120" x="340" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="init" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="eventCount = 0" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Ain" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="100" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="menu" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Display menu:&lt;br&gt;1 Add, 2 Show queue, 3 Process next,&lt;br&gt;4 Remove by id, 5 Statistics, 0 Exit" vertex="1">
+          <mxGeometry height="90" width="280" x="260" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="readopt" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Read option" vertex="1">
+          <mxGeometry height="50" width="200" x="300" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="Is option an integer from 0 to 5?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="err1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &amp;quot;Invalid menu option. Enter a number from 0 to 5.&amp;quot;" vertex="1">
+          <mxGeometry height="70" width="340" x="600" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="option == 0?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" value="End" vertex="1">
+          <mxGeometry height="50" width="120" x="640" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="option == 1?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="dfull" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="eventCount &amp;lt; MAX_EVENTS?" vertex="1">
+          <mxGeometry height="100" width="220" x="600" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="errfull" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &amp;quot;Queue is full (100 events). Event not added.&amp;quot;" vertex="1">
+          <mxGeometry height="70" width="300" x="560" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="readev" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="readEvent:&lt;br&gt;read id, priority, source, message" vertex="1">
+          <mxGeometry height="70" width="220" x="900" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="dvalid" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="validateEvent:&lt;br&gt;is the event valid and is id unique?" vertex="1">
+          <mxGeometry height="100" width="240" x="1240" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="errval" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print validation error message" vertex="1">
+          <mxGeometry height="60" width="220" x="1250" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="enq" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="enqueue:&lt;br&gt;queue[eventCount] = event&lt;br&gt;eventCount = eventCount + 1" vertex="1">
+          <mxGeometry height="80" width="240" x="1630" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="added" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &amp;quot;Event &amp;lt;id&amp;gt; added.&amp;quot;" vertex="1">
+          <mxGeometry height="60" width="220" x="1640" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="option == 2?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="show" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="printQueue:&lt;br&gt;print events in arrival order&lt;br&gt;or &amp;quot;Queue is empty.&amp;quot;" vertex="1">
+          <mxGeometry height="80" width="260" x="600" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="option == 3?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="dempty" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="eventCount == 0?" vertex="1">
+          <mxGeometry height="100" width="220" x="600" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="errempty" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &quot;Queue is empty.&amp;nbsp;&lt;div&gt;Nothing to process.&quot;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="240" x="590" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="scaninit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="findNextEvent:&lt;br&gt;best = 0, i = 1" vertex="1">
+          <mxGeometry height="70" width="200" x="900" y="1255" as="geometry" />
+        </mxCell>
+        <mxCell id="dloop" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="i &amp;lt; eventCount?" vertex="1">
+          <mxGeometry height="100" width="220" x="1180" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="dcmp" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="queue[i].priority &amp;gt; queue[best].priority?" vertex="1">
+          <mxGeometry height="110" width="240" x="1170" y="1390" as="geometry" />
+        </mxCell>
+        <mxCell id="setbest" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="best = i" vertex="1">
+          <mxGeometry height="60" width="140" x="1490" y="1415" as="geometry" />
+        </mxCell>
+        <mxCell id="inc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="i = i + 1" vertex="1">
+          <mxGeometry height="50" width="140" x="1220" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="procnext" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="processNext:&lt;br&gt;print queue[best];&lt;br&gt;shift queue[best+1 … eventCount−1] left;&lt;br&gt;eventCount = eventCount − 1" vertex="1">
+          <mxGeometry height="90" width="280" x="1740" y="1245" as="geometry" />
+        </mxCell>
+        <mxCell id="d6" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="option == 4?" vertex="1">
+          <mxGeometry height="100" width="220" x="290" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="dempty2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="eventCount == 0?" vertex="1">
+          <mxGeometry height="100" width="220" x="600" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="errempty2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &amp;quot;Queue is empty.&amp;quot;" vertex="1">
+          <mxGeometry height="60" width="200" x="600" y="1820" as="geometry" />
+        </mxCell>
+        <mxCell id="readid" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Read id" vertex="1">
+          <mxGeometry height="60" width="180" x="900" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="removeById:&lt;br&gt;linear search for index k&lt;br&gt;with queue[k].id == id" vertex="1">
+          <mxGeometry height="80" width="240" x="1150" y="1690" as="geometry" />
+        </mxCell>
+        <mxCell id="dfound" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" value="Is the event found?" vertex="1">
+          <mxGeometry height="100" width="220" x="1460" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="notfound" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="Print &amp;quot;Event with id &amp;lt;id&amp;gt; not found.&amp;quot;" vertex="1">
+          <mxGeometry height="70" width="240" x="1450" y="1820" as="geometry" />
+        </mxCell>
+        <mxCell id="remove" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" value="Shift queue[k+1 … eventCount−1] left;&lt;br&gt;eventCount = eventCount − 1;&lt;br&gt;print &amp;quot;Event &amp;lt;id&amp;gt; removed.&amp;quot;" vertex="1">
+          <mxGeometry height="90" width="280" x="1760" y="1685" as="geometry" />
+        </mxCell>
+        <mxCell id="stats" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=15;fontSize=12;" value="printStatistics:&lt;br&gt;total = eventCount; count of priority 3, 2, 1;&lt;br&gt;free = MAX_EVENTS − eventCount" vertex="1">
+          <mxGeometry height="90" width="300" x="250" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="init" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="menu" value="eventCount">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="Ain" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" target="menu" value="return to menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="menu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="readopt" value="menu text">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="readopt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d1" value="option">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="err1" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d2" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="end" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d3" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="d3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dfull" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="d3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d4" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="d4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="show" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="d4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d5" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="d5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dempty" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="d5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="d6" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="d6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dempty2" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="d6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="stats" value="No (option 5)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1050" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="err1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A1" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="dfull" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="readev" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="dfull" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="errfull" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="960" y="915" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="errfull" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A2" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="readev" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dvalid" value="raw event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="dvalid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="enq" value="Yes: validated event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="dvalid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="errval" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1570" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="errval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A3" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="enq" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="added" value="queue update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1960" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="added" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A4" value="confirmation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="960" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="show" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A5" value="queue state">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="dempty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="errempty" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="dempty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="scaninit" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="960" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" edge="1" parent="1" source="errempty" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A6" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="scaninit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dloop" value="best, i">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" edge="1" parent="1" source="dloop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dcmp" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" edge="1" parent="1" source="dloop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="procnext" value="No: best found">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" edge="1" parent="1" source="dcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="setbest" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" edge="1" parent="1" source="dcmp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="inc" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e37" edge="1" parent="1" source="setbest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="inc" value="best">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1560" y="1575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e38" edge="1" parent="1" source="inc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="dloop" value="i">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1575" />
+              <mxPoint x="1140" y="1290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1860" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="e39" edge="1" parent="1" source="procnext" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="A7" value="processed event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e40" edge="1" parent="1" source="dempty2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="errempty2" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" edge="1" parent="1" source="dempty2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="readid" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="910" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" edge="1" parent="1" source="errempty2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A8" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e43" edge="1" parent="1" source="readid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="search" value="id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e44" edge="1" parent="1" source="search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dfound" value="index k">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e45" edge="1" parent="1" source="dfound" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="remove" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e46" edge="1" parent="1" source="dfound" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="notfound" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1800" y="1835" as="geometry" />
+        </mxCell>
+        <mxCell id="e47" edge="1" parent="1" source="notfound" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="A9" value="error message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="1880" y="1810" as="geometry" />
+        </mxCell>
+        <mxCell id="e48" edge="1" parent="1" source="remove" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="A10" value="queue update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;" value="A" vertex="1">
+          <mxGeometry height="40" width="40" x="380" y="1970" as="geometry" />
+        </mxCell>
+        <mxCell id="e49" edge="1" parent="1" source="stats" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=11;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="A11" value="statistics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=left;fontSize=12;whiteSpace=wrap;" value="Menu loop: repeats while option != 0.&lt;br&gt;Every connector A returns to &amp;quot;Display menu&amp;quot;.&lt;br&gt;Strict &amp;gt; keeps the earliest event for equal priority (arrival order)." vertex="1">
+          <mxGeometry height="50" width="460" x="40" y="2060" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
